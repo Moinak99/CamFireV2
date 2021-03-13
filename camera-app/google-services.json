@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "93623570555",
+    "project_id": "camfire-ionicangular",
+    "storage_bucket": "camfire-ionicangular.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93623570555:android:df858f49a98d5d772212de",
+        "android_client_info": {
+          "package_name": "com.camfire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93623570555-io5iqikgichcri4t782uch9aeaucbgvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGbDYJsksSrgxJqusyNiuw3MicSgHJifg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "93623570555-io5iqikgichcri4t782uch9aeaucbgvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

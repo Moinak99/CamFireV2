@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+        <!-- <ion-icon name="menu-outline" size="large" (click)='modalMenu()'></ion-icon>  -->
+        <ion-icon slot="end" name="close-circle-outline" size="large" position="end" (click)="modalMenu()"></ion-icon>
+        <!-- <ion-title>Register</ion-title> -->
+     </ion-toolbar>
+    </ion-header>
+
+
+      <ion-content> 
+        <ion-title><h1>Update Details</h1></ion-title>
+  <ion-item>
+    <ion-label position="floating">Your Name</ion-label>
+    <ion-input type="name" [(ngModel)]="Name" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Mobile Number</ion-label>
+    <ion-input type="number" [(ngModel)]="Contact" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">E-Mail</ion-label>
+    <ion-input type="email" [(ngModel)]="Email" readonly></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Date of Birth:</ion-label>
+    <ion-input type="date" [(ngModel)]="DateofBirth"  max="2020-08-26" required></ion-input>
+
+  </ion-item>
+
+
+  
+  <ion-button class="ion-padding"  color="tertiary"  (click)="Update()" expand="full">
+    Update
+  </ion-button>
+
+  
+
+  
+  
+  
+    </ion-content>
+  
+    <ion-footer >
+      <ion-toolbar class="new-background-color">
+        <ion-title>Developed by Moinak</ion-title>
+      </ion-toolbar>
+    </ion-footer>
+  

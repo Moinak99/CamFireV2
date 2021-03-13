@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+        <ion-icon name="menu-outline" size="large" (click)='showMenu()'></ion-icon> 
+     </ion-toolbar>
+    </ion-header>
+      <ion-menu side="start" menuId="3" contentId="main" class="my-custom-menu">
+          <ion-toolbar>
+            <div class = "menu-header-bg">
+              <div class="header-content">
+           <ion-title>Show Images</ion-title> </div></div>
+         </ion-toolbar> 
+       <!-- </ion-header> -->
+       <ion-content>
+         <ion-list>
+            <ion-item [routerLink]="['/dashboard']"><ion-icon name="home-outline"></ion-icon>&nbsp;Dashboard</ion-item>
+            <!-- <ion-item (click)="merchantLogout()">Logout</ion-item> -->
+            <!-- <ion-item [routerLink]="['/register']">Register</ion-item> -->
+            <ion-item [routerLink]="['/user-profile']"><ion-icon name="person-circle-outline"></ion-icon>&nbsp;Profile</ion-item>
+
+            <!-- <ion-item [routerLink]="['/search-date']"><ion-icon name="calendar-outline"></ion-icon>&nbsp;Search Image by Date</ion-item> -->
+            <ion-item (click)="logout()"><ion-icon name="log-out-outline"></ion-icon>&nbsp;Logout</ion-item>
+
+
+            <!-- <ion-item [routerLink]="['/merchant-reg']">Register</ion-item> -->
+    
+           </ion-list>
+        </ion-content>
+      </ion-menu>
+      <ion-router-outlet id="main"></ion-router-outlet>
+
+<ion-content>
+  <h3>Gallery</h3>
+  <div *ngFor="let item of userreq">
+  <ion-card>
+     <ion-card-header>
+      <ion-card-title>{{item.uploadDate}}</ion-card-title>
+    </ion-card-header> 
+  
+    <ion-card-content>
+     <img src="{{item.picture}}" (click)="presentActionSheet(item.delid,item.storageid,item.picture)">
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+
+
+
+<!-- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button color="dark" size="large">
+    <ion-icon md="caret-up" ios="chevron-up-circle-outline" size="large"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+
+    <ion-fab-button color="light"(click)="dashboard()">
+      <ion-icon name="cloud-upload-outline" ></ion-icon>
+        </ion-fab-button>
+    <ion-fab-button color="light" (click)="search()">
+      <ion-icon name="search"></ion-icon>
+    </ion-fab-button>
+    
+  </ion-fab-list>
+</ion-fab> -->
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+
+        
+  
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="dashboard" (click)="dashboard()">
+          <ion-label>Upload</ion-label>
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+            </ion-tab-button>
+        <ion-tab-button tab="search" (click)="search()">
+          <ion-label>Search image</ion-label>
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs> 
+  </ion-toolbar>
+</ion-footer>

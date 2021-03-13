@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+        <ion-icon name="menu-outline" size="large" (click)='dashboardMenu()'></ion-icon> 
+     </ion-toolbar>
+    </ion-header>
+      <ion-menu side="start" menuId="2" contentId="main" class="my-custom-menu">
+          <ion-toolbar>
+            <div class = "menu-header-bg">
+              <div class="header-content">
+           <ion-title>Welcome</ion-title> </div></div>
+         </ion-toolbar> 
+       <!-- </ion-header> -->
+       <ion-content>
+         <ion-list>
+            <ion-item [routerLink]="['/dashboard']"><ion-icon name="home-outline"></ion-icon> &nbsp; Home</ion-item>
+            <ion-item [routerLink]="['/user-profile']"><ion-icon name="person-circle-outline"></ion-icon> &nbsp; Profile</ion-item>
+
+            <!-- <ion-item (click)="showImage()"><ion-icon name="images-outline"></ion-icon>&nbsp;Gallery</ion-item>
+            <ion-item [routerLink]="['/search-date']"><ion-icon name="calendar-outline"></ion-icon>&nbsp;Search Image by Date</ion-item> -->
+
+            <ion-item (click)="presentAlertConfirm()"><ion-icon name="log-out-outline"></ion-icon> &nbsp;Logout</ion-item>  
+  
+           </ion-list>
+        </ion-content>
+      </ion-menu>
+      <ion-router-outlet id="main"></ion-router-outlet>
+
+<ion-content>
+
+
+  <!-- <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="camera-outline" (click)="presentLoading()"></ion-icon>
+
+    </ion-fab-button>
+
+    <ion-fab-button>
+      <ion-icon name="camera-outline" (click)="presentLoading()"></ion-icon>
+
+    </ion-fab-button>
+    
+  </ion-fab> -->
+
+
+
+<ion-button  class="ion-padding"  color="primary" size="large" (click)="presentLoading()"><ion-icon name="camera-outline"></ion-icon>Camera</ion-button>
+<ion-button  class="ion-padding" color="secondary" size="large" (click)="presentLoadingz()"><ion-icon name="cloud-upload-outline"></ion-icon> Gallery</ion-button>
+
+
+<div *ngIf="cardopen">
+<ion-card>
+  <ion-card-content>
+    <img src="{{takephoto}}">  
+  </ion-card-content>
+  <ion-button (click)="uploadImageCloud()">Upload to cloud</ion-button>
+
+</ion-card>
+</div>
+
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title>Welcome</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+
+        
+  
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="gallery" (click)="gallery()">
+          <ion-label>Gallery</ion-label>
+          <ion-icon name="images-outline"></ion-icon>
+            </ion-tab-button>
+        <ion-tab-button tab="search" (click)="search()">
+          <ion-label>Search image</ion-label>
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs> 
+  </ion-toolbar>
+</ion-footer>
